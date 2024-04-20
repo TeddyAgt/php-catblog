@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--ff-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-title);
+}
+
+a {
+  color: var(--black);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto 120px;
+}

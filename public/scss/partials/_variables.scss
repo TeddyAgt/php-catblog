@@ -1,0 +1,25 @@
+:root {
+  /* colors */
+  --white: #ecf0f1;
+  --black: #222;
+  --primary: #1abc9c;
+  --primary-dark: #16a085;
+  --accent: #d35400;
+  --midnight-blue: #2c3e50;
+  --grey: #b2bec3;
+
+  /* fonts */
+  --ff-main: "Lato", sans-serif;
+  --ff-title: "Open Sans", sans-serif;
+
+  /* font sizes */
+  --fz-14: 0.875rem;
+  --fz-16: 1rem;
+  --fz-18: 1.125rem;
+  --fz-24: 1.5rem;
+  --fz-32: 2rem;
+
+  /* other */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.3);
+  --shake: shake 0.3s ease-out;
+}
