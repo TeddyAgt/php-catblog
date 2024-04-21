@@ -6,6 +6,7 @@ class UserDb
     private PDOStatement $statementCreateOne;
     private PDOStatement $statementReadOneByEmail;
     private PDOStatement $statementReadOneByUsername;
+    private PDOStatement $statementUpdateProfilePicture;
 
     function __construct(private PDO $pdo)
     {
@@ -16,12 +17,13 @@ class UserDb
             :username,
             :email,
             :password,
+            DEFAULT,
             DEFAULT
         )");
 
         $this->statementReadOneByEmail = $pdo->prepare("SELECT * FROM user WHERE user_email=:email");
-
         $this->statementReadOneByUsername = $pdo->prepare("SELECT * FROM user WHERE user_username=:username");
+        $this->statementUpdateProfilePicture = $pdo->prepare("UPDATE user SET user_picture=:profilePicture WHERE user_id=:userId");
     }
 
     function emailExists(string $email): bool
@@ -66,8 +68,11 @@ class UserDb
         return $this->statementReadOneByEmail->fetch();
     }
 
-    function logout()
+    function UpdateProfilePicture(string $profilePicture, int $userId): void
     {
+        $this->statementUpdateProfilePicture->bindValue(":profilePicture", $profilePicture);
+        $this->statementUpdateProfilePicture->bindValue(":userId", $userId);
+        $this->statementUpdateProfilePicture->execute();
     }
 }
 

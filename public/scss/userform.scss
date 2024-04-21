@@ -56,27 +56,11 @@
   }
 
   input {
-    background: var(--white-transparent);
     border-color: var(--white);
-
-    &:focus {
-      border-color: var(--primary);
-    }
-  }
-
-  button {
-    font-weight: 600;
   }
 
   .separator {
     background: var(--black);
     margin-block: 32px 16px;
   }
-}
-
-.controls-group {
-  margin-top: 32px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
 }

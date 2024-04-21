@@ -48,25 +48,11 @@
   margin-bottom: 16px;
 }
 .user-form input {
-  background: var(--white-transparent);
   border-color: var(--white);
-}
-.user-form input:focus {
-  border-color: var(--primary);
-}
-.user-form button {
-  font-weight: 600;
 }
 .user-form .separator {
   background: var(--black);
   margin-block: 32px 16px;
-}
-
-.controls-group {
-  margin-top: 32px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
 }
 
 /*# sourceMappingURL=userform.css.map */

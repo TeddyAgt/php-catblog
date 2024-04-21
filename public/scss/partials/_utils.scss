@@ -16,6 +16,11 @@
   &:hover {
     transition: opacity 0.2s ease-out;
     opacity: 0.85;
+
+    i,
+    img {
+      animation: shake 0.3s ease-out;
+    }
   }
 
   &--primary {
@@ -36,6 +41,18 @@
     @include max1100 {
       padding: 16px;
     }
+  }
+}
+
+.main-title {
+  font-size: var(--fz-44);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+
+  @include max750 {
+    font-size: var(--fz-32);
   }
 }
 
@@ -122,6 +139,37 @@
   &:hover {
     opacity: 0.75;
     transition: opacity 0.2s ease-out;
+  }
+}
+
+.controls-group,
+.reaction-group {
+  display: flex;
+  justify-content: flex-end;
+}
+.controls-group {
+  margin-top: 32px;
+  gap: 8px;
+
+  button,
+  a {
+    font-weight: 600;
+  }
+}
+
+.reaction-group {
+  gap: 16px;
+  a,
+  button {
+    font-size: var(--fz-24);
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 }
 

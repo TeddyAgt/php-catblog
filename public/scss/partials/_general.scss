@@ -26,7 +26,9 @@ a {
 /* Formulaires */
 label,
 input,
-textarea {
+textarea,
+select,
+option {
   font-size: var(--fz-18);
 }
 
@@ -35,7 +37,9 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select,
+option {
   padding: 8px 16px;
   border: 1px solid var(--grey);
   border-radius: 4px;
@@ -43,6 +47,13 @@ textarea {
 
   &:not([type="radio"], [type="checkbox"]):focus {
     outline: none;
+  }
+
+  background: var(--white-transparent);
+  border-color: var(--grey);
+
+  &:focus {
+    border-color: var(--primary);
   }
 }
 

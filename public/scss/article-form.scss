@@ -1,0 +1,31 @@
+.article-form__form {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+
+  textarea {
+    min-height: 300px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: -62px;
+    left: 16px;
+    background: url(../images/kitty-pen.png);
+  }
+}
+
+.footer {
+  &::before {
+    content: "";
+    position: absolute;
+    top: -64px;
+    left: 9%;
+    width: 64px;
+    height: 64px;
+    background: url(../images/cat-tree.png);
+  }
+}
