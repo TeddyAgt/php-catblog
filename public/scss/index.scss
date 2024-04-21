@@ -1,0 +1,95 @@
+@use "./partials/media-queries" as *;
+
+/* Hero section */
+
+.hero-section {
+  position: relative;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  background: url(https://res.cloudinary.com/dzfp90k4a/image/upload/v1713597533/catblog/website_assets/catblog-hero-background-85.jpg)
+    center 30% / cover;
+  display: flex;
+  flex-direction: column;
+  //   justify-content: center;
+  align-items: center;
+  color: var(--white);
+
+  &__title {
+    font-size: clamp(50px, 7.4vw, 104px);
+    font-weight: 1000;
+    text-shadow: var(--box-shadow);
+    margin-top: 160px;
+
+    .title--thin {
+      font-weight: 100;
+      font-size: 20%;
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    bottom: 30%;
+    padding: 16px 32px;
+    font-size: var(--fz-24);
+
+    @include max900 {
+      font-size: var(--fz-18);
+    }
+  }
+}
+
+/* Articles */
+.article-preview-card {
+  max-width: 800px;
+  margin: 0 auto 40px;
+
+  &:first-of-type {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      top: -62px;
+      right: 16px;
+      background: url(../images/kitty-pen.png);
+    }
+  }
+
+  &__container--top {
+    border-radius: 5px;
+    // overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-size: var(--fz-24);
+  }
+
+  &__author {
+    font-family: var(--ff-title);
+    font-weight: 600;
+  }
+
+  &__category {
+    font-weight: 300;
+  }
+
+  .separator {
+    margin: 24px auto;
+    width: 80%;
+  }
+
+  &__link {
+    margin-left: auto;
+    margin-top: 16px;
+  }
+}

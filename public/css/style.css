@@ -1,10 +1,12 @@
 :root {
   /* colors */
   --white: #ecf0f1;
+  --white-transparent: #ecf0f194;
   --black: #222;
   --primary: #1abc9c;
   --primary-dark: #16a085;
   --accent: #d35400;
+  --error: #c0392b;
   --midnight-blue: #2c3e50;
   --grey: #b2bec3;
   /* fonts */
@@ -54,9 +56,155 @@ a {
   text-underline-offset: 2px;
 }
 
-section {
+/* Formulaires */
+label,
+input,
+textarea {
+  font-size: var(--fz-18);
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 8px 16px;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  font-family: var(--ff-main);
+}
+input:not([type=radio], [type=checkbox]):focus,
+textarea:not([type=radio], [type=checkbox]):focus {
+  outline: none;
+}
+
+button {
+  font-size: var(--fz-16);
+  font-family: var(--ff-main);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  color: var(--black);
+  box-shadow: var(--box-shadow);
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.btn:hover {
+  transition: opacity 0.2s ease-out;
+  opacity: 0.85;
+}
+.btn--primary {
+  background: var(--primary);
+}
+.btn--accent {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.section--1100 {
   max-width: 1100px;
   margin: 0 auto 120px;
+}
+@media screen and (max-width: 1100px) {
+  .section--1100 {
+    padding: 16px;
+  }
+}
+
+.section__title {
+  font-size: var(--fz-32);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  font-size: var(--fz-18);
+}
+
+.card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background: var(--grey);
+}
+
+.light {
+  font-weight: 300;
+}
+
+.white {
+  color: var(--white);
+}
+
+.center {
+  text-align: center;
+}
+
+/* Formulaires */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-error {
+  color: var(--error);
+  font-size: var(--fz-14);
+  font-weight: 600;
+}
+
+.password-input-container {
+  width: 100%;
+  position: relative;
+}
+.password-input-container input {
+  width: 100%;
+}
+
+.forgotten-password {
+  text-align: right;
+  font-size: var(--fz-14);
+  transition: opacity 0.2s ease-out;
+}
+.forgotten-password:hover {
+  opacity: 0.75;
+  transition: opacity 0.2s ease-out;
+}
+
+.password-visibility-toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+.password-visibility-toggler:hover {
+  opacity: 0.75;
+  transition: opacity 0.2s ease-out;
+}
+
+/* margin padding */
+.mt-16 {
+  margin-top: 16px;
 }
 
 @keyframes shake {
@@ -77,13 +225,16 @@ section {
   }
 }
 /* Header */
-header {
+.header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary);
   padding: 16px;
+  z-index: 10;
+}
+.header--main {
+  background: var(--primary);
   box-shadow: var(--box-shadow);
 }
 
@@ -92,6 +243,9 @@ header {
   align-items: center;
   text-decoration: none;
 }
+.header__logo-link--white {
+  color: var(--white);
+}
 .header__logo-link:hover .logo__image {
   animation: var(--shake);
 }
@@ -99,7 +253,7 @@ header {
 .logo__text {
   font-family: var(--ff-title);
   font-size: var(--fz-32);
-  font-weight: 400;
+  font-weight: 1000;
   margin-left: 16px;
 }
 
@@ -129,27 +283,13 @@ header {
   text-decoration: none;
   padding: 8px;
   border-radius: 4px;
-  z-index: 1;
 }
-.main-navigation__link::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.main-navigation__link:hover {
   background: var(--primary-dark);
-  border-radius: 4px;
-  z-index: -1;
-  opacity: 0;
   transition: opacity 0.2s ease-out;
 }
-.main-navigation__link:hover::after {
-  opacity: 1;
-  transition: opacity 0.2s ease-out;
-}
-.main-navigation__link--active::after {
-  opacity: 1;
+.main-navigation__link--active {
+  background: var(--primary-dark);
 }
 @media screen and (max-width: 900px) {
   .main-navigation {
@@ -158,7 +298,6 @@ header {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 1;
     background: var(--primary);
     padding: 16px;
     box-shadow: var(--box-shadow);

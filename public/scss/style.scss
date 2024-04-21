@@ -6,20 +6,28 @@
 @use "./partials/media-queries" as *;
 
 /* Header */
-header {
+.header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary);
   padding: 16px;
-  box-shadow: var(--box-shadow);
+  z-index: 10;
+
+  &--main {
+    background: var(--primary);
+    box-shadow: var(--box-shadow);
+  }
 }
 
 .header__logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
+
+  &--white {
+    color: var(--white);
+  }
 
   &:hover .logo__image {
     animation: var(--shake);
@@ -29,7 +37,7 @@ header {
 .logo__text {
   font-family: var(--ff-title);
   font-size: var(--fz-32);
-  font-weight: 400;
+  font-weight: 1000;
   margin-left: 16px;
 }
 
@@ -60,29 +68,13 @@ header {
     padding: 8px;
     border-radius: 4px;
 
-    z-index: 1;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+    &:hover {
       background: var(--primary-dark);
-      border-radius: 4px;
-      z-index: -1;
-      opacity: 0;
       transition: opacity 0.2s ease-out;
     }
 
-    &:hover::after {
-      opacity: 1;
-      transition: opacity 0.2s ease-out;
-    }
-
-    &--active::after {
-      opacity: 1;
+    &--active {
+      background: var(--primary-dark);
     }
   }
 
@@ -92,7 +84,6 @@ header {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 1;
     background: var(--primary);
     padding: 16px;
     box-shadow: var(--box-shadow);
