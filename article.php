@@ -64,11 +64,12 @@ $article = $articleDb->fetchOne($articleId);
                             <span class="reaction-group__text">12</span>
                         </div>
                     </div>
-
-                    <div class="controls-group article__controls-group">
-                        <a href="./article-form.php?id=<?= $article["article_id"]; ?>" type="submit" class="btn btn--primary">Éditer</a>
-                        <a href="./index.php" class="btn btn--accent">Supprimer</a>
-                    </div>
+                    <?php if ($user && $user["user_id"] === $article["article_author"]) : ?>
+                        <div class="controls-group article__controls-group">
+                            <a href="./article-form.php?id=<?= $article["article_id"]; ?>" type="submit" class="btn btn--primary">Éditer</a>
+                            <a href="./index.php" class="btn btn--accent">Supprimer</a>
+                        </div>
+                    <?php endif; ?>
                 </footer>
 
             </article>

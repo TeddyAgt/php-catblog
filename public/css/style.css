@@ -93,6 +93,12 @@ select:focus,
 option:focus {
   border-color: var(--primary);
 }
+input.input-error,
+textarea.input-error,
+select.input-error,
+option.input-error {
+  border-color: var(--accent);
+}
 
 button {
   font-size: var(--fz-16);
@@ -125,6 +131,10 @@ button {
 }
 .btn--accent {
   background: var(--accent);
+  color: var(--white);
+}
+.btn--error {
+  background: var(--error);
   color: var(--white);
 }
 

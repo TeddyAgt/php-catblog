@@ -157,6 +157,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="controls-group">
                     <button type="submit" class="btn btn--primary">Sauvegarder</button>
                     <a href="./index.php" class="btn btn--accent">Annuler</a>
+                    <?php if ($articleId) : ?>
+                        <a href="./delete-article.php?id=<?= $article["article_id"]; ?>" class="btn btn--error">Supprimer</a>
+                    <?php endif; ?>
                 </div>
             </form>
         </section>

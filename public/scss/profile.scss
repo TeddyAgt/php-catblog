@@ -66,6 +66,10 @@
     border-bottom: 1px solid var(--grey);
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__title {
     font-size: var(--fz-24);
   }

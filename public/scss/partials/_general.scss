@@ -55,6 +55,9 @@ option {
   &:focus {
     border-color: var(--primary);
   }
+  &.input-error {
+    border-color: var(--accent);
+  }
 }
 
 button {

@@ -57,6 +57,14 @@
 
   input {
     border-color: var(--white);
+
+    &:focus {
+      border-color: var(--primary);
+    }
+
+    &.input-error {
+      border-color: var(--accent);
+    }
   }
 
   .separator {

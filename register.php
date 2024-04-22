@@ -77,8 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "email" => $email,
             "password" => $password
         ]);
+        header("Location: /login.php");
     }
-    header("Location: /login.php");
 }
 
 ?>
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="input-group">
                 <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" id="firstname" value=<?= $firstname ?? "" ?>>
+                <input type="text" name="firstname" id="firstname" value="<?= $firstname ?? "" ?>" classe=<?= !!$errors["firstname"] ? "input-error" : ""; ?>>
                 <p class="form-error"><?= $errors["firstname"] ?? "" ?></p>
             </div>
 
@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <a href="./index.php" class="btn btn--accent">Annuler</a>
             </div>
 
-            <p class="mt-16">Vous avez déjà un compte ? <a href="./login.php">Connectez-vous</a>.</p>
+            <p class="mt-16 center">Vous avez déjà un compte ? <a href="./login.php">Connectez-vous</a>.</p>
         </form>
     </section>
 

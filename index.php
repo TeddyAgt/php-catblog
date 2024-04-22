@@ -49,21 +49,6 @@ $articles = $articleDb->fetchAll() ?? [];
                 </article>
             <?php endforeach; ?>
 
-
-            <!-- <article class="article-preview-card article-preview-card--first card">
-                <div class="article-preview-card__container article-preview-card__container--top">
-                    <img src="https://res.cloudinary.com/dzfp90k4a/image/upload/v1713604285/catblog/articles_picture/article-picture-1.jpg" alt="" class="article-preview-card__image">
-                </div>
-                <div class="article-preview-card__container article-preview-card__container--bottom">
-                    <h3 class="article-preview-card__title">Attack curtains meow</h3>
-                    <p class="article-preview-card__author"><span class="light">by</span> Cosmo Fripouillou</p>
-                    <p class="article-preview-card__category">Lifestyle</p>
-                    <div class="separator"></div>
-                    <p class="article-preview-card__preview-text">Attack curtains demand to have some of whatever the human is cooking, then sniff the offering and walk away yet if it fits i sits, avoid the new toy and...</p>
-                    <a href="" class="btn btn--primary article-preview-card__link">Lire l'article</a>
-                </div>
-            </article> -->
-
         </section>
     </main>
 

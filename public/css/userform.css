@@ -50,6 +50,12 @@
 .user-form input {
   border-color: var(--white);
 }
+.user-form input:focus {
+  border-color: var(--primary);
+}
+.user-form input.input-error {
+  border-color: var(--accent);
+}
 .user-form .separator {
   background: var(--black);
   margin-block: 32px 16px;

@@ -55,6 +55,9 @@
   padding: 8px;
   border-bottom: 1px solid var(--grey);
 }
+.article-list__link {
+  text-decoration: none;
+}
 .article-list__title {
   font-size: var(--fz-24);
 }

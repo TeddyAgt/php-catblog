@@ -5,8 +5,9 @@ class ArticleDb
     private PDOStatement $statementCreateOne;
     private PDOStatement $statementFetchOne;
     private PDOStatement $statementFetchAll;
-    private PDOStatement $statementUpdateOne;
     private PDOStatement $statementFetchAllByUser;
+    private PDOStatement $statementUpdateOne;
+    private PDOStatement $statementDeleteOne;
 
     function __construct(private PDO $pdo)
     {
@@ -35,6 +36,8 @@ class ArticleDb
             ");
 
         $this->statementFetchAllByUser = $pdo->prepare("SELECT * FROM article WHERE article_author=:userId");
+
+        $this->statementDeleteOne = $pdo->prepare("DELETE FROM article WHERE article_id=:articleId");
     }
 
     function createArticle(array $article): void
@@ -76,6 +79,12 @@ class ArticleDb
         $this->statementUpdateOne->bindValue(":content", $article["article_content"]);
         $this->statementUpdateOne->bindValue(":articleId", $article["article_id"]);
         $this->statementUpdateOne->execute();
+    }
+
+    function deleteOne($articleId): void
+    {
+        $this->statementDeleteOne->bindValue(":articleId", $articleId);
+        $this->statementDeleteOne->execute();
     }
 }
 

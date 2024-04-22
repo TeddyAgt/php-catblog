@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <a href="./index.php" class="btn btn--accent">Annuler</a>
             </div>
 
-            <p class="mt-16">Pas encore inscrit ? <a href="./register.php">Créez un compte</a>.</p>
+            <p class="mt-16 center">Pas encore inscrit ? <a href="./register.php">Créez un compte</a>.</p>
         </form>
     </section>
 
